@@ -1,0 +1,24 @@
+<div class="row mt-2 p-2">
+    <div class="col-md-1 ">
+        <h5> Id: {{employee.id}} </h5>
+    </div>
+    <div class="col-md-4">
+        <h5>Employee Name: {{employee.firstname | titlecase}} {{employee.lastname | titlecase}}</h5>
+    </div>
+    <div class="col-md-2">
+        <h5>JobTitle: {{employee.jobtitle | titlecase}} </h5>
+    </div>
+    <div class="col-md-2">
+        <h5>Salary:{{employee.salary}}  </h5>
+    </div>
+    <div class="col-md-2">
+        <h5>Date Of Joining: {{employee.datepicker}} </h5>
+    </div>
+    <div class="col-md-1">
+        <button class="btn btn-info"  (click)="editEmployeeClicked()">Edit </button> 
+        <button class="btn btn-danger mt-1" (click)="deleteEmployeeClicked()"> Delete</button>
+    </div>
+</div>
+<hr>
+      
+            

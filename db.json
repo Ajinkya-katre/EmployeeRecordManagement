@@ -1,0 +1,32 @@
+{
+  "posts": [
+    {
+      "firstname": "ajinkya",
+      "lastname": "katre",
+      "jobtitle": "developer",
+      "salary": 40000,
+      "datepicker": "2022-08-31",
+      "id": 1
+    },
+    {
+      "firstname": "ganesh",
+      "lastname": "kale",
+      "jobtitle": "analyst",
+      "salary": 50000,
+      "datepicker": "2022-08-18",
+      "id": 2
+    },
+    {
+      "firstname": "somnath",
+      "lastname": "gaikwad",
+      "jobtitle": "developer",
+      "salary": 45000,
+      "datepicker": "2022-08-04",
+      "id": 3
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

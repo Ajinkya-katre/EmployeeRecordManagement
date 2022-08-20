@@ -1,0 +1,62 @@
+<div class="container-fluid p-0 ">
+    <app-header></app-header>
+</div>
+
+<div class="container mt-4 p-0">
+
+  <div class="row">
+      <div class="col-md-6">
+        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" #addEmployeeButton> <span class="fa fa-plus-circle"></span> Add New Employee</button>
+      </div>
+      <div class="col-md-6">
+        <input type="text" class="form-control" placeholder="Search Employee" (input)="searchEmployees(searchInput.value)" #searchInput/>
+      </div>
+  </div>
+
+</div>
+
+<div class="container mt-3 p-0">
+
+  <div class="row" *ngFor="let employee of employeesToDisplay; let ei = index;">
+      <div class="col-md-12 bg-light ">
+        
+        <app-empdetails [employee]="employee" (onRemoveEmployee)="removeEmployee($event)" (onEditEmployee)="editEmployee($event)
+        "></app-empdetails>
+      </div>
+  </div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-dark text-white">
+        <h5 class="modal-title " id="exampleModalLabel">Employee Details</h5>
+        <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="reactiveForm" >
+          
+          <label >Firstname</label>
+          <input type="text" class="form-control" placeholder="Enter Firstname" formControlName="firstname">
+          <label >Lastname</label>
+          <input type="text" class="form-control" placeholder="Enter Lastname" formControlName="lastname">
+          <label >Jobtitle</label>
+          <input type="text" class="form-control" placeholder="Enter Jobtitle" formControlName="jobtitle">
+          <label >Salary</label>
+          <input type="number" class="form-control" placeholder="Enter salary" formControlName="salary">
+          <label >Date Of Joining</label>
+          <input type="date" class="form-control" formControlName="datepicker">
+         
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-success" (click)="addEmployee()">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
