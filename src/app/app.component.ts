@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormGroup, FormControl,FormBuilder,Validators } from '@angular/forms';
+import { FormGroup, FormControl,FormBuilder } from '@angular/forms';
 import { Employee } from './models/employee.model';
 import { EmployeeService } from './services/employee.service';
 
@@ -33,7 +33,7 @@ export class AppComponent implements OnInit{
 
     })
 
-    this.employeeService.getEmployee().subscribe(res => {
+    this.employeeService.getEmployee().subscribe((res) => {
       for(let empl of res){
         this.employees.push(empl)
       }
